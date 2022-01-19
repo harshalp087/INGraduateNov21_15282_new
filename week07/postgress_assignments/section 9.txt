@@ -1,0 +1,51 @@
+-- section 9
+-- having clause
+-- select productname,sum(quantity*order_details.unitprice) as AmountBought
+-- from products
+-- join order_details using (productid)
+-- group by productname
+-- having sum(quantity*order_details.unitprice)<2000
+-- order by AmountBought asc
+
+--  select companyname,sum(quantity*unitprice) as AmountBought from customers
+--  natural join orders
+--  natural join order_details
+--  group by companyname
+--  having sum(quantity*unitprice)>5000
+-- order by AmountBought desc
+
+-- select companyname,sum(quantity*order_details.unitprice) as AmountBought from customers
+-- natural join orders
+-- natural join order_details
+-- where orderdate between '1997-01-01' and '1997-06-30'
+-- group by companyname
+-- having sum(quantity*order_details.unitprice)>5000
+-- order by AmountBought desc
+
+--groupimg sets
+-- select c.companyname as buyer,s.companyname as supplier,sum(od.unitprice*quantity)
+-- from customers as c
+-- natural join orders
+-- natural join order_details as od
+-- join products using (productid)
+-- join suppliers as s using (supplierid)
+-- group by grouping sets((buyer),(buyer,supplier))
+-- order by buyer,supplier 
+
+-- select companyname,categoryname,sum(od.unitprice*od.quantity)
+-- from customers as c
+-- natural join orders
+-- natural join order_details as od
+-- join products using (productid)
+-- join categories as s using (categoryid)
+-- group by grouping sets ((companyname),(companyname,categoryname))
+-- order by companyname,categoryname nulls first
+
+
+
+
+
+
+
+
+
